@@ -4,7 +4,6 @@ from langchain_core.messages import HumanMessage, BaseMessage
 from langgraph.graph.message import add_messages
 from typing import TypedDict, Annotated
 from dotenv import load_dotenv
-from langgraph.checkpoint.memory import InMemorySaver
 from langchain_community.tools import DuckDuckGoSearchRun
 from langchain_core.tools import tool
 from langgraph.prebuilt import ToolNode, tools_condition
@@ -14,7 +13,7 @@ load_dotenv()
 import os
 
 GOOGLE_GEMINI_API_KEY = os.getenv("GOOGLE_GEMINI_API_KEY")
-WEATHERSTACK_API_KEY = os.getenv("GOOGLE_GEMINI_API_KEY")
+WEATHERSTACK_API_KEY = os.getenv("WEATHERSTACK_API_KEY")
 
 
 llm = ChatGoogleGenerativeAI(model="gemini-2.5-flash", api_key=GOOGLE_GEMINI_API_KEY)
